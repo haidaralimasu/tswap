@@ -7,3 +7,6 @@ on:
 jobs:
   audit:
     uses: haidaralimasu/thirdgen-scanner/.github/workflows/scan.yml@main
+    permissions:
+      contents: read
+      pull-requests: write
