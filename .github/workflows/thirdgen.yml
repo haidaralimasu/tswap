@@ -14,5 +14,5 @@ permissions:
 
 jobs:
   scan:
-    uses: thirdgen-security/scanner/.github/workflows/scan.yml@main
+    uses: haidaralimasu/thirdgen-scanner/.github/workflows/scan.yml@main
     secrets: inherit
