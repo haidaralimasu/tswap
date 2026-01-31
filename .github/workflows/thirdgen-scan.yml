@@ -1,9 +1,13 @@
-name: Security Audit
-
-on:
-  pull_request:
-    branches: [main, master]
-
-jobs:
-  audit:
-    uses: haidaralimasu/thirdgen-scanner/.github/workflows/scan.yml@main
+  name: ThirdGen Security Scan                                                                                                 
+                                                                                                                               
+  on:                                                                                                                          
+    pull_request:                                                                                                              
+      branches: [main, master]                                                                                                 
+    push:                                                                                                                      
+      branches: [main, master]                                                                                                 
+    workflow_dispatch:                                                                                                         
+                                                                                                                               
+  jobs:                                                                                                                        
+    scan:                                                                                                                      
+      uses: haidaralimasu/thirdgen-scanner/.github/workflows/scan.yml@main                                                     
+      secrets: inherit    
