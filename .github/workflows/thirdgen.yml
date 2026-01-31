@@ -1,13 +1,18 @@
-  name: ThirdGen Security Scan                                                                                                 
-                                                                                                                               
-  on:                                                                                                                          
-    pull_request:                                                                                                              
-      branches: [main, master]                                                                                                 
-    push:                                                                                                                      
-      branches: [main, master]                                                                                                 
-    workflow_dispatch:                                                                                                         
-                                                                                                                               
-  jobs:                                                                                                                        
-    scan:                                                                                                                      
-      uses: haidaralimasu/thirdgen-scanner/.github/workflows/scan.yml@main                                                     
-      secrets: inherit   
+name: ThirdGen Security Scan
+
+on:
+  pull_request:
+    branches: [main, master]
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  actions: read
+
+jobs:
+  scan:
+    uses: thirdgen-security/scanner/.github/workflows/scan.yml@main
+    secrets: inherit
